@@ -3,7 +3,9 @@
 window.addEventListener('DOMContentLoaded', function () {
     let name = document.querySelector('#personeName'),
         idNum = document.querySelector('#personeId'),
-        addName = document.querySelector('#sendPhone');
+        addName = document.querySelector('#sendPhone'),
+        log = document.querySelector('#aboutPhone');
+        
 
     class User {
         constructor(userName, id) {
@@ -21,21 +23,100 @@ Dmitry.hello();
 
 //  Классы / Конструкторы
 
-    addName.addEventListener('click', function () {
-        let nameForm = [this.userName];
-        let idForm = [this.id];
+addName.addEventListener('click', function() {
+    class Memb {
+        constructor(user, num, login) {
+            this.user = user;
+            this.num = num;
+            this.login = login;
+        }
 
-        nameForm = name.value;
-        idForm = idNum.value;
+        newUser(user, num) {
+            this.login = name.value;
+            let login = new Memb (user, num);
+            return login;
+        }
+    }
+    let access = new Memb ('abc', 1);
 
-        let pers = new User(name.value, idNum.value);
-        let nameString = JSON.stringify(nameForm);
-        let idString = JSON.stringify(idForm);
-
-        localStorage.setItem('Name', nameString);
-        localStorage.setItem('Id', idString);
-    });
+    access.newUser();
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // addName.addEventListener('click', function () {
+    //     class Member {
+    //         constructor(userName, id) {
+    //             this.userName = userName;
+    //             this.id = id;
+    //         }
+    //         set() {
+    //             let nameForm = [this.userName = name.value],
+    //                 idForm = [this.id = idNum.value];
+
+    //             console.log(nameForm);
+    //             console.log(idForm);
+
+
+    //             let strName = JSON.stringify(nameForm),
+    //                 strId = JSON.stringify(idForm);
+
+    //             let setName = new Member (this.userName, this.id);
+
+    //             console.log(setName);
+        
+    //             localStorage.setItem(setName, nameForm);
+    //             // localStorage.setItem(setId, idForm);
+    //         }
+    //     }
+
+    //     setName.set();
+
+        
+
+    //     // console.log(setName);
+
+        
+
+
+        // setName.set();
+
+        
+
+        
+        
+
+        // let nameForm = [this.userName = name.value];
+        // let idForm = [this.id = idNum.value];
+
+        // let setName = new Member (JSON.stringify(this.userName)),
+        //     setId = new Member (JSON.stringify(this.id));
+
+        // console.log(typeof(setName));
+
+//         // localStorage.setItem(setName, nameForm);
+//         // localStorage.setItem(setId, idForm);
+
+//     });
+// });
 
 
 //Это победа!
@@ -58,7 +139,6 @@ Dmitry.hello();
 //             // console.log(JSON);
 //         }
 //     });
-// });
+});
 
 //     console.log(name);
-
